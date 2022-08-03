@@ -12,12 +12,16 @@ contract Medium is ERC721, ERC721URIStorage, Ownable {
     using Counters for Counters.Counter; 
     Counters.Counter private _tokenIdCounter;
     uint public fees;
+    address payable chairman;
 
     constructor(
         string memory name_,
         string memory symbol_,
         uint fees_
-    ) ERC721(name_, symbol_){fees = fees_;}
+    ) ERC721(name_, symbol_){
+        fees = fees_;
+         chairman = payable(msg.sender);
+         }
 
     function safeMint(address to, string memory _tokenURI) public payable{
         require(msg.value>=fees, "not enough MATIC");
@@ -32,6 +36,10 @@ contract Medium is ERC721, ERC721URIStorage, Ownable {
         if(contractBalance>0){
             payable(msg.sender).transfer(address(this).balance);
         }
+    }
+
+    function getOwner() public view returns(address){
+        return chairman;
     }
 
     function _burn(uint tokenId) internal override(ERC721, ERC721URIStorage) {
