@@ -5,6 +5,8 @@ import Auth from "./pages/Auth";
 import Layout from "./components/Layout";
 import AuthContext from "./context/AuthContext";
 import NavBar from "./components/NavBar/NavBar";
+import Search from "./UI/ConnectButton/Search/Search";
+import RightBar from "./components/RightBar/RightBar";
 
 function App() {
   const { accounts, setAccounts } = useContext(AuthContext);
@@ -19,7 +21,9 @@ function App() {
               <NavBar />
             </div>
             <div className="col2">kil</div>
-            <div className="col3">dffdb</div>
+            <div className="col3">
+              <RightBar />
+            </div>
           </div>
         </div>
       ) : (
