@@ -4,13 +4,15 @@ import "../css/auth.css";
 import logo from "../images/logo/logo.png";
 import ConnectButton from "../UI/ConnectButton/ConnectButton";
 
-const Auth = ({ setAccounts }) => {
+const Auth = () => {
+  const { setAccounts } = useContext(AuthContext);
   async function connect() {
     if (window.ethereum) {
       const resolve = await window.ethereum.request({
         method: "eth_requestAccounts",
       });
       setAccounts(resolve);
+      localStorage.setItem("loged", resolve);
     }
   }
   return (

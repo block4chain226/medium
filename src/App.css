@@ -17,9 +17,10 @@ li {
   list-style-type: none;
 }
 
-.container {
+.container1 {
   display: flex;
   width: 100%;
+  flex-direction: row;
 }
 .col1,
 .col2,
@@ -28,11 +29,11 @@ li {
   height: 100vh;
 }
 .col1 {
-  width: 15%;
+  width: 5%;
 }
 .col2 {
-  width: 60%;
+  width: 75%;
 }
 .col3 {
-  width: 25%;
+  width: 30%;
 }
