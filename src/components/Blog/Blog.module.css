@@ -1,0 +1,18 @@
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 80%;
+}
+
+.info {
+  display: flex;
+}
+.title {
+  font-size: 20px;
+  font-weight: 600;
+}
+.text {
+  font-size: 16px;
+}

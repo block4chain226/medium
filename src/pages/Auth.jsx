@@ -3,9 +3,11 @@ import AuthContext from "../context/AuthContext";
 import "../css/auth.css";
 import logo from "../images/logo/logo.png";
 import ConnectButton from "../UI/ConnectButton/ConnectButton";
+import { Navigate, useNavigate } from "react-router-dom";
 
 const Auth = () => {
   const { setAccounts } = useContext(AuthContext);
+  const navigate = useNavigate();
   async function connect() {
     if (window.ethereum) {
       const resolve = await window.ethereum.request({
@@ -13,6 +15,8 @@ const Auth = () => {
       });
       setAccounts(resolve);
       localStorage.setItem("loged", resolve);
+      // navigate("/", { replace: true });
+      // navigate(0);
     }
   }
   return (

@@ -1,0 +1,18 @@
+.container3 {
+  display: flex;
+  flex-direction: column;
+  padding: 20px 10px;
+  border-bottom: 1px grey;
+}
+.header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 30px;
+}
+.blogs {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
